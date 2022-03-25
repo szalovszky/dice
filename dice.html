@@ -1,0 +1,23 @@
+<input id="count" type="number" min="1" />
+<input id="sides" type="number" min="1" />
+<button onclick="gen()">Calc</button>
+<p id="output"></p>
+<script>
+    var count = document.getElementById("count");
+    var sides = document.getElementById("sides");
+
+    var output = document.getElementById("output");
+
+    var sum = 0;
+
+    function gen() {
+        output.innerHTML = "";
+        sum = 0;
+        for (let i = 0; i < count.value; i++) {
+            var rand = Math.floor((Math.random() * sides.value) + 1);
+            sum += rand;
+            output.innerHTML = output.innerHTML + "<br />" + rand;
+        }
+        output.innerHTML = output.innerHTML + "<br />Sum: " + sum;
+    }
+</script>
